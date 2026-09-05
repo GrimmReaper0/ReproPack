@@ -1,5 +1,9 @@
+"""Intentionally failing, deterministic reproduction demo."""
 from pathlib import Path
-text=Path('input.txt').read_text().strip()
-print('input:',text)
-if text=='trigger':
-    raise TypeError('intentional parser failure')
+import sys
+
+value = Path('input.txt').read_text().strip()
+if value == 'trigger':
+    print('ParserError: expected a number, received trigger', file=sys.stderr)
+    raise SystemExit(7)
+print(int(value))
