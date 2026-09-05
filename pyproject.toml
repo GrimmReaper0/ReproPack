@@ -1,0 +1,20 @@
+[build-system]
+requires=["setuptools>=77"]
+build-backend="setuptools.build_meta"
+[project]
+name="repropack"
+version="0.1.0"
+description="Capture inspectable, integrity-checked bug reproductions and replay them with explicit consent."
+readme="README.md"
+requires-python=">=3.11"
+license={text="MIT"}
+authors=[{name="GrimmReaper0"}]
+dependencies=[]
+[project.scripts]
+repropack="repropack.cli:entrypoint"
+[project.urls]
+Homepage="https://github.com/GrimmReaper0/ReproPack"
+Repository="https://github.com/GrimmReaper0/ReproPack"
+[tool.setuptools.packages.find]
+include=["repropack*"]
+exclude=["tests*"]
